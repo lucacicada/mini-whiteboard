@@ -1,9 +1,9 @@
 {
-  "name": "nuxt-app",
+  "name": "mini-whiteboard",
   "type": "module",
   "private": true,
   "scripts": {
-    "build": "nuxt build",
+    "build": "nuxt generate",
     "dev": "nuxt dev",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
