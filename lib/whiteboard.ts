@@ -180,17 +180,19 @@ export function createWhiteboard(canvas: HTMLCanvasElement) {
   // register a pointerdown only onto the canvas itself
   canvas.addEventListener('pointerdown', onPointerDown, { passive: true })
   canvas.addEventListener('pointermove', onPointerMove, { passive: true })
+  canvas.addEventListener('contextmenu', onContextMenuEvent, { passive: false })
+
   window.addEventListener('pointerup', onPointerUp, { passive: true })
   window.addEventListener('pointercancel', onPointerCancel, { passive: true })
-  canvas.addEventListener('contextmenu', onContextMenuEvent, { passive: false })
   window.addEventListener('resize', onWindowResize, { passive: true })
 
   const disconnect = () => {
     canvas.removeEventListener('pointerdown', onPointerDown)
     canvas.removeEventListener('pointermove', onPointerMove)
+    canvas.removeEventListener('contextmenu', onContextMenuEvent)
+
     window.removeEventListener('pointerup', onPointerUp)
     window.removeEventListener('pointercancel', onPointerCancel)
-    canvas.removeEventListener('contextmenu', onContextMenuEvent)
     window.removeEventListener('resize', onWindowResize)
   }
 
